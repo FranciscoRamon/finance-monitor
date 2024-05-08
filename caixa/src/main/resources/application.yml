@@ -1,0 +1,7 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    jdbc:
+      url: ${DATABASE_URL}

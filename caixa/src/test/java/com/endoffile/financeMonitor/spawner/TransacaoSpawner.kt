@@ -12,7 +12,9 @@ class TransacaoSpawner {
         val categoria = CategoriaSpawner().spawn()
         val descricao = "Descricao ficticia"
         val valor = BigDecimal.TEN
-        val dataTransacao = Date(2024, 0, 0)
+        val dataTransacao = Date(Calendar.getInstance().apply {
+            set(2024, Calendar.JANUARY, 1)
+        }.time.time)
         val opcional = false
 
         val tipos = listOf('E', 'S')

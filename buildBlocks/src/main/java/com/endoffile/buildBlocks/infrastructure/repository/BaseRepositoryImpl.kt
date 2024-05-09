@@ -8,9 +8,10 @@ import kotlin.reflect.KClass
 
 abstract class BaseRepositoryImpl<T : Any, ID>(
     private val entityClass: KClass<T>,
-    @PersistenceContext
-    private val entityManager: EntityManager
 ) : BaseRepository<T, ID> {
+
+    @PersistenceContext
+    lateinit var entityManager: EntityManager
 
     @Transactional
     override fun save(entity: T): T {
